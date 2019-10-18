@@ -1,6 +1,0 @@
-<%= form_for @purchase do |f| %>
-  <%= f.text_field :customer_name %>
-  <%= f.collection_select :brew_id, @brews, :id, :blend_name %>
-  <%= f.number_field :price ,step: 0.01 %>
-  <%= f.submit %>
-<% end %>
