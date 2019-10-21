@@ -1,3 +1,10 @@
+## APIS
+- Add `rest-client` gem to Gemfile
+- 
+
+
+
+
 Intro to Active Record
 ======================
 

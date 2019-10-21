@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_18_171418) do
+ActiveRecord::Schema.define(version: 2019_10_21_180306) do
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "published_date"
+    t.string "description"
+  end
 
   create_table "employers", force: :cascade do |t|
     t.string "name"
@@ -18,6 +24,17 @@ ActiveRecord::Schema.define(version: 2019_10_18_171418) do
     t.integer "salary"
     t.integer "sick_leave"
     t.string "boss"
+  end
+
+  create_table "employers_pets", force: :cascade do |t|
+    t.integer "employer_id"
+    t.integer "pet_id"
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "breed"
   end
 
 end
