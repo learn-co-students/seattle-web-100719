@@ -1,0 +1,13 @@
+<div>
+  <p>
+    Hello! This is <b>bold</b> but
+    totally <i style="color: blue;">cool</i>.
+  </p>
+  <p>
+    My name is
+$$name$$
+    and I love
+$$food$$
+    to eat.
+  </p>
+</div>
