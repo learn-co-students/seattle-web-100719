@@ -23,3 +23,12 @@
     -   log<sub>8</sub> 64 = 2
     -   log<sub>2</sub> 32 = 5
 -   An example of an algorithm with logarithmic time is a binary search, because the time complexity is cut in half with each step of the way. See the *Binary-Search.png* image in this repo to review how a binary search breaks down.
+<br/>
+<br/>
+<br/>
+<br/>
+
+#### Resources
+<small>[Algorithmic Complexity](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Algorithmic%20Complexity/complexity.html) from Carnegie Mellon University</small>
+
+<small>[What is a Logarithm?](http://www.mclph.umn.edu/mathrefresh/logs.html) from University of Minnesota/small>
