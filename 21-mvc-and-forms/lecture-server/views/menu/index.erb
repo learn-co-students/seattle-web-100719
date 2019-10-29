@@ -1,0 +1,17 @@
+<p>Here is out menu.</p>
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <a href="/menu/<%= item.name %>">
+        <%= item.name %>
+      </a>
+      for <%= item.price %>
+    </li>
+  <% end %>
+</ul>
+
+<p>
+  <a href="/menu/new">
+    Add a new menu item
+  </a>
+</p>

@@ -1,0 +1,29 @@
+<p>Enter up to three item prices to see a suggested tip.</p>
+
+<form method="POST" action="/tip-calculator">
+  <p>Food</p>
+  <input type="number" name="price[food][]">
+  <input type="number" name="price[food][]">
+  <input type="number" name="price[food][]">
+  <p>Food</p>
+  <input type="number" name="price[drink][]">
+  <input type="number" name="price[drink][]">
+  <input type="number" name="price[drink][]">
+
+  <p>Food</p>
+  <input type="number" name="food[price][]">
+  <input type="number" name="food[price][]">
+  <input type="number" name="food[price][]">
+
+  <p>Drinks</p>
+  <input type="number" name="drinks[price][]">
+  <input type="number" name="drinks[price][]">
+  <input type="number" name="drinks[price][]">
+
+  <p>Other</p>
+  <input type="number" name="randomPrice1">
+  <input type="number" name="randomPrice2">
+  <input type="number" name="randomPrice3">
+
+  <input type="submit">
+</form>

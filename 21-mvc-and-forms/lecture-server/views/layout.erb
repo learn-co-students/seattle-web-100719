@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: lightgreen;
+      }
+
+      #footer {
+        position: absolute;
+        bottom: 0;
+        padding-bottom: .5em;
+      } 
+    </style>
+  </head>
+  <body>
+    <h1>Mojito Bar</h1>
+
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/menu">Menu</a>
+      <a href="/tip-calculator">Tip Calculator</a>
+    </nav>
+
+    <%= yield %>
+
+    <div id="footer">
+      (c) Mojito Joe 2015
+    </div>
+  </body>
+</html>
