@@ -31,4 +31,4 @@
 #### Resources
 <small>[Algorithmic Complexity](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Algorithmic%20Complexity/complexity.html) from Carnegie Mellon University</small>
 
-<small>[What is a Logarithm?](http://www.mclph.umn.edu/mathrefresh/logs.html) from University of Minnesota/small>
+<small>[What is a Logarithm?](http://www.mclph.umn.edu/mathrefresh/logs.html) from University of Minnesota</small>
