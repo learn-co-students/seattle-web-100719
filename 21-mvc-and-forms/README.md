@@ -48,6 +48,7 @@ end
 * Notice that when you access values in `params` the values are strings!
 * Even passing an `id` in a URL like `<localhost:9393/dogs/32>` the `32` will
   come as `"32"` because it's part of the String of the URL
+* Use `params[:id].to_i` to convert it explicitly into an integer
 
 ```ruby
 params = {
@@ -161,6 +162,12 @@ params = {
 }
 ```
 
+```ruby
+name = params[:student][:name]
+grade = params[:student][:grade].to_i
+@new_student = Student.net(name: name, grade: grade)
+```
+
 ---
 ## Deeply Nested Forms
 * Repeat brackets to deeply nest info, like `name="student[course][name]"`
@@ -181,11 +188,10 @@ params = {
   "student" => {
     "name" => "Vic",
     "grade" => "12",
-    "course" => [
-      {
-        "name" => "AP US History",
-        "topic" => "History"
-      },
+    "course" => {
+      "name" => "AP US History",
+      "topic" => "History"
+    },
   }
 }
 ```
@@ -212,9 +218,64 @@ params = {
     "subject": "How are you and the volcano?",
     "cc": [
       "mary@gmail.com",
-      "duncan@gmail.com"
+      "duncan@gmail.com",
       "vincent@gmail.com",
     ]
   }
 }
+```
+
+---
+## RESTful Routing
+
+```
+GET   /menu
+GET   /menu/new
+POST  /menu
+```
+
+Why not GET /menu/show?
+
+
+* We could come up with our own custom URL scheme for every single project
+* These different schemes would become divergent and we'd have lots of different patterns
+
+
+* localhost:9393/show-all-menus
+* localhost:9393/create-new-menu-item-form
+* localhost:9393/create-new-menu-item-then-show-all
+
+
+* localhost:9393/all-movies
+* localhost:9393/enter-new-movie
+* localhost:9393/save-new-movie
+
+
+RESTful Routing is one pattern we can follow to acheive consistency between
+different resources and projects
+
+---
+## RESTful Routing
+
+```
+| Method  | URL             | Name   | Meaning                  
+|---------|----------       |-----------------------------------
+| GET     | /books          | index  | show all the books       
+| GET     | /books/:id      | show   | show one book            
+| GET     | /books/new      |        | returns a blank HTML form to fill out to create a new book
+| POST    | /books          | create | create a new book        
+| GET     | /books/:id/edit |        | returns a pre-filled HTML form to fill out to edit a existing book
+| PUT     | /books/:id      | update | save changes to a book   
+| DELETE  | /books/:id      | delete | delete a book
+```
+
+
+```
+GET    /cats
+GET    /cats/:id
+GET    /cats/new
+POST   /cats
+GET    /cats/:id/edit
+PUT    /cats/:id
+DELETE /cats/:id
 ```
