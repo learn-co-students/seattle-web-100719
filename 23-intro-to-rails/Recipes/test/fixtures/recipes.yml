@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ingredients: MyString
+  name: MyString
+  instructions: MyString
+  cooktime: 2019-11-01 10:49:30
+  invented: 2019-11-01 10:49:30
+  servings: 1
+
+two:
+  ingredients: MyString
+  name: MyString
+  instructions: MyString
+  cooktime: 2019-11-01 10:49:30
+  invented: 2019-11-01 10:49:30
+  servings: 1
