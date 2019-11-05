@@ -8,6 +8,10 @@
 
 Book.destroy_all
 
-GoogleBooks::Adapter.new("Brandon Sanderson").fetch_books
-GoogleBooks::Adapter.new("Brian Christian").fetch_books
-GoogleBooks::Adapter.new("Margaret Atwood").fetch_books
+GoogleBooks::Adapter.new("Neal Stephenson").fetch_books
+GoogleBooks::Adapter.new("Julia Serano").fetch_books
+GoogleBooks::Adapter.new("Hegel").fetch_books
+
+Author.create(name: "Shawn")
+Author.create(name: "Jen")
+Author.create(name: "Squid")

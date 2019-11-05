@@ -13,8 +13,9 @@ class BooksController < ApplicationController
   end
 
   def create
-    # byebug
-    @book = Book.create(title: params[:book][:title], author: params[:book][:author], snippet: params[:book][:snippet])
+    byebug
+    # @book = Book.create(title: params[:book][:title], author: params[:book][:author], snippet: params[:book][:snippet])
+    @book = Book.create(book_params)
     redirect_to "/books/#{@book.id}"
   end
 
@@ -26,5 +27,17 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @book.update(title: params[:book][:title], author: params[:book][:author], snippet: params[:book][:snippet])
     redirect_to "/books/#{@book.id}"
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.delete
+    redirect_to books_path
+  end
+
+  private 
+
+  def book_params
+    params.require(:book).permit(:title, :snippet, :author_id)
   end
 end
