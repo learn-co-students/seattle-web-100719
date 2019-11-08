@@ -1,0 +1,4 @@
+<% @brews.each do |brew| %>
+  <%= link_to brew.blend_name, brew_path(brew) %>
+  <%= button_to "Delete this brew", brew_path(brew), method: :delete %><br>
+<% end %>
