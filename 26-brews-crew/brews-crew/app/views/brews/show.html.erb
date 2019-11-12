@@ -1,0 +1,8 @@
+<%= @brew.blend_name %>
+<%= @brew.origin %>
+<%= @brew.notes %>
+<%= @brew.strength%>
+<%#= @brew.to_s %>
+<% @brew.purchases.each do |purchase| %>
+  <%= purchase.customer_name %>
+<% end %>
