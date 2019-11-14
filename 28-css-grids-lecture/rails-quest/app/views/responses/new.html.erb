@@ -1,0 +1,38 @@
+<div class="wrapper">
+
+    <div class="title">
+        this should be a title
+    </div>
+
+    <div class="image">
+        <img src="http://scriptedstudents.files.wordpress.com/2014/04/wordmark-3.png?w=300" width="175px">
+    </div>
+
+    <div class="description"> 
+        this should be a description
+    </div>
+
+    <div class="results">
+        <div>
+            <h4 id="num-correct"> Correct So Far: <%= session[:number_correct] %> </h4>
+        </div>
+        <div>
+            <h3 id="flash-message"> <%= flash[:message] %> </h3>
+        </div>
+    </div>
+
+    <div class="question">
+        <h2><%= @question.content %></h2>
+        <%= form_with model:@questionResponse do | form | %>
+            <%= form.hidden_field :question_id %>
+            <label>Choices:</label>
+            <% @question.random_answers.each do | answer | %>
+                <div class="radio-button">
+                    <label><%= answer.content %></label>
+                    <%= form.radio_button :answer_id, answer.id, :class => 'rad-button'%>
+                </div>
+            <% end %>
+            <%= form.submit "Submit"%>
+        <% end %>
+    </div>
+</div>
