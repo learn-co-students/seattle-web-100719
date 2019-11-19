@@ -1,14 +1,32 @@
 // Jen Jen
 
-function checkP1(str, str1){
-    var ob1 = {}
-    var ob2 = {}
-    for(let i=0; i<str.length;i++){
-        if(ob1[i]){
-
-        }
+function checkPermutation(str1, str2) {
+    obj1 = {};
+    obj2 = {};
+    for (let i = 0; i < str1.length; i++) {
+       if (obj1[str1[i]]) {
+          obj1[str1[i]]++;
+       } else {
+          obj1[str1[i]] = 1;
+       }
     }
-}
+ 
+    for (let j = 0; j < str2.length; j++) {
+       if (obj2[str2[j]]) {
+          obj2[str1[j]]++;
+       } else {
+          obj2[str2[j]] = 1;
+       }
+    }
+ 
+    let obj1keys = Object.keys(obj1);
+    for (let i = 0; i < obj1keys.length; i++) {
+       if (obj1[obj1keys[i]] !== obj2[obj1keys[i]]) {
+          return false;
+       }
+    }
+    return true;
+ }
 
 //Katrina's idea
 
@@ -20,10 +38,14 @@ function checkP(s1, s2){
 
 const cb = (longer,shorter) => {
     for(let i=0; i<longer.length; i++){
-        return longer[i] != shorter[i] ? false : true
+        if(longer[i] != shorter[i]){
+            return false
+        }
     }
+    return true
 }
 
-console.log(checkP("dry", "lwal"))
-console.log("two")
-console.log(checkP("dry", "dyr"))
+console.log(checkP("bat", "bay"))
+console.log(checkP("aaaaa", "aaaaa"))
+console.log(checkPermutation("bat", "bay"))
+console.log(checkPermutation("aaaaa", "aaaaa"))
