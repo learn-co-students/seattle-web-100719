@@ -45,3 +45,33 @@ def kanga(x1, v1, x2, v2)
         return "NO"
     end
 end
+
+#alisa's array surprise
+
+def kangaroo(x1, v1, x2, v2)
+    arr1 = []
+    arr2 = []
+    arr1 << x1
+    arr2 << x2
+
+    var1 = x1 + v1
+    var2 = x2 + v2
+    arr1 << var1
+    arr2 << var2
+    i = 0
+    
+    while i < 10000
+      if arr1[i] == arr2[i]
+        return "YES"
+      end 
+
+      var1 += v1 
+      var2 += v2
+      arr1 << var1
+      arr2 << var2
+      i += 1
+    
+    end
+    return "NO" 
+
+end
