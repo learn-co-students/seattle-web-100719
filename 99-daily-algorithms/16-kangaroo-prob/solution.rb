@@ -75,3 +75,17 @@ def kangaroo(x1, v1, x2, v2)
     return "NO" 
 
 end
+
+#rachid's short & sweet version
+
+def kangaroo(x1, v1, x2, v2)
+    if (v1 == v2 && x1 != x2)
+        return "NO"
+    elsif (v1 == v2 && x1 == x2) 
+        return "YES"
+    elsif (x1-x2)/(v2-v1) >=0 && (x1-x2)%(v2-v1) == 0  
+        return "YES"
+    else 
+        return "NO"
+    end
+end
