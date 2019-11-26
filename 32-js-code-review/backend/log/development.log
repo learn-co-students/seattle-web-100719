@@ -1,0 +1,1297 @@
+Started GET "/" for ::1 at 2019-11-21 14:17:42 -0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Rdhillon/.rvm/gems/ruby-2.6.1/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Rdhillon/.rvm/gems/ruby-2.6.1/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.9ms | Allocations: 473)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 2556)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDancers (20191121222040)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "dancers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "url" varchar NOT NULL, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191121222040"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-21 22:22:53.140127"], ["updated_at", "2019-11-21 22:22:53.140127"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/dancers" for ::1 at 2019-11-21 14:31:00 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DancersController#index as */*
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers"[0m
+  ↳ app/controllers/dancers_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1619)
+
+
+Started GET "/dancers" for ::1 at 2019-11-21 14:31:10 -0800
+Processing by DancersController#index as */*
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers"[0m
+  ↳ app/controllers/dancers_controller.rb:6:in `index'
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 767)
+
+
+Started POST "/dancers/" for ::1 at 2019-11-21 14:33:41 -0800
+Processing by DancersController#create as JSON
+  Parameters: {"dancer"=>{"url"=>"https://media1.giphy.com/media/chU6iZtkStQTC/giphy.gif?cid=790b76119754a8a7a373417f51b41da002b4ca3184803469&rid=giphy.gif", "description"=>"Paul Rudd dancing really really well"}}
+HTTP Origin header (https://apidock.com) didn't match request.base_url (http://localhost:3000)
+Completed 422 Unprocessable Entity in 0ms (ActiveRecord: 0.0ms | Allocations: 462)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.0.1) lib/action_controller/metal/request_forgery_protection.rb:217:in `handle_unverified_request'
+actionpack (6.0.1) lib/action_controller/metal/request_forgery_protection.rb:249:in `handle_unverified_request'
+actionpack (6.0.1) lib/action_controller/metal/request_forgery_protection.rb:244:in `verify_authenticity_token'
+activesupport (6.0.1) lib/active_support/callbacks.rb:429:in `block in make_lambda'
+activesupport (6.0.1) lib/active_support/callbacks.rb:201:in `block (2 levels) in halting'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.0.1) lib/active_support/callbacks.rb:202:in `block in halting'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `block in invoke_before'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `each'
+activesupport (6.0.1) lib/active_support/callbacks.rb:514:in `invoke_before'
+activesupport (6.0.1) lib/active_support/callbacks.rb:134:in `run_callbacks'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.0) lib/rack/cors.rb:100:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/dancers/" for ::1 at 2019-11-21 14:37:19 -0800
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DancersController#create as JSON
+  Parameters: {"dancer"=>{"url"=>"https://media1.giphy.com/media/chU6iZtkStQTC/giphy.gif?cid=790b76119754a8a7a373417f51b41da002b4ca3184803469&rid=giphy.gif", "description"=>"Paul Rudd dancing really really well"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/dancers_controller.rb:18:in `create'
+  [1m[36mDancer Create (0.4ms)[0m  [1m[32mINSERT INTO "dancers" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://media1.giphy.com/media/chU6iZtkStQTC/giphy.gif?cid=790b76119754a8a7a373417f51b41da002b4ca3184803469&rid=giphy.gif"], ["description", "Paul Rudd dancing really really well"], ["created_at", "2019-11-21 22:37:19.625056"], ["updated_at", "2019-11-21 22:37:19.625056"]]
+  ↳ app/controllers/dancers_controller.rb:18:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/dancers_controller.rb:18:in `create'
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 1.5ms | Allocations: 5970)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/dancers" for ::1 at 2019-11-21 14:38:39 -0800
+Processing by DancersController#index as */*
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers"[0m
+  ↳ app/controllers/dancers_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1043)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-21 14:39:19 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.3ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 3100)
+
+
+Started POST "/dancers/" for ::1 at 2019-11-21 14:40:43 -0800
+Processing by DancersController#create as JSON
+  Parameters: {"dancer"=>{"url"=>"https://media0.giphy.com/media/7XE0nUUauSj3a/giphy.gif?cid=790b761110afeb3b699a78557dfea5f191531c4e2572aa70&rid=giphy.gif", "description"=>"Paul Rudd dancing in a really weird way"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/dancers_controller.rb:18:in `create'
+  [1m[36mDancer Create (0.5ms)[0m  [1m[32mINSERT INTO "dancers" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://media0.giphy.com/media/7XE0nUUauSj3a/giphy.gif?cid=790b761110afeb3b699a78557dfea5f191531c4e2572aa70&rid=giphy.gif"], ["description", "Paul Rudd dancing in a really weird way"], ["created_at", "2019-11-21 22:40:43.602063"], ["updated_at", "2019-11-21 22:40:43.602063"]]
+  ↳ app/controllers/dancers_controller.rb:18:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/dancers_controller.rb:18:in `create'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 2244)
+
+
+Started GET "/dancers/2" for ::1 at 2019-11-21 14:40:53 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 699)
+
+
+Started GET "/dancers" for ::1 at 2019-11-21 14:41:01 -0800
+Processing by DancersController#index as */*
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers"[0m
+  ↳ app/controllers/dancers_controller.rb:6:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1063)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFeedback (20191122184107)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "feedback" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "dancer_id" integer NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20191122184107"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" ORDER BY "dancers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" ORDER BY "dancers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" ORDER BY "dancers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" ORDER BY "dancers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ? LIMIT ?[0m  [["dancer_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" ORDER BY "dancers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ? LIMIT ?[0m  [["dancer_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.5ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.4ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "test 1"], ["dancer_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mDancer Load (0.3ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" ORDER BY "dancers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ? LIMIT ?[0m  [["dancer_id", 1], ["LIMIT", 11]]
+  [1m[36mDancer Load (0.3ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" ORDER BY "dancers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ? ORDER BY "feedback"."id" ASC LIMIT ?[0m  [["dancer_id", 1], ["LIMIT", 1]]
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" ORDER BY "dancers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" ORDER BY "dancers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" ORDER BY "dancers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" ORDER BY "dancers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/dancers/1" for ::1 at 2019-11-22 11:02:18 -0800
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 20ms (Views: 6.6ms | ActiveRecord: 1.3ms | Allocations: 11879)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-22 11:04:44 -0800
+  
+SyntaxError (/Users/Rdhillon/Desktop/Dance Rader/backend/app/controllers/feedback_controller.rb:16: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/feedback_controller.rb:16: syntax error, unexpected end-of-input, expecting end
+app/controllers/feedback_controller.rb:16: syntax error, unexpected end-of-input, expecting end
+app/controllers/feedback_controller.rb:16: syntax error, unexpected end-of-input, expecting end
+Started POST "/feedback/" for ::1 at 2019-11-22 11:05:16 -0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by FeedbackController#create as JSON
+  Parameters: {"dancer"=>{"content"=>"testing post request to feedback", "dancer_id"=>1}, "feedback"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.3ms | Allocations: 389)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: feedback):
+  
+app/controllers/feedback_controller.rb:15:in `feedback_params'
+app/controllers/feedback_controller.rb:3:in `create'
+Started POST "/feedback/" for ::1 at 2019-11-22 11:05:42 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"content"=>"testing post request to feedback", "dancer_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.5ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.4ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "testing post request to feedback"], ["dancer_id", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 9751)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" ORDER BY "feedback"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[31mDelete from Feedback[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM SQLITE_SEQUENCE WHERE name='Feedback'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDelete from Feedback[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM SQLITE_SEQUENCE WHERE name='Feedback'[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDelete from Dancer[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[31mDelete from Feedback[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM SQLITE_SEQUENCE WHERE name='Feedback'[0m
+  [1m[35m (0.2ms)[0m  [1m[31mDelete from Dancer[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[31mDelete from Feedback[0m
+  [1m[35m (0.1ms)[0m  [1m[31mDELETE FROM SQLITE_SEQUENCE WHERE name='Feedback'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDelete from feedback[0m
+  [1m[35m (1.0ms)[0m  [1m[31mDELETE FROM SQLITE_SEQUENCE WHERE name='feedback'[0m
+  [1m[35m (0.8ms)[0m  [1m[31mDelete from dancers[0m
+  [1m[35m (0.6ms)[0m  [1m[31mDELETE FROM SQLITE_SEQUENCE WHERE name='dancers'[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Create (0.2ms)[0m  [1m[32mINSERT INTO "dancers" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://media1.giphy.com/media/K6CkDdm0ofyms/giphy.gif?cid=790b7611207ea3c727649278ad3eeea3a378a95e010d49e5&rid=giphy.gif"], ["description", "Paul Rudd has all the moves!"], ["created_at", "2019-11-22 19:27:35.453126"], ["updated_at", "2019-11-22 19:27:35.453126"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Create (0.2ms)[0m  [1m[32mINSERT INTO "dancers" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://media0.giphy.com/media/7XE0nUUauSj3a/giphy.gif?cid=790b761110afeb3b699a78557dfea5f191531c4e2572aa70&rid=giphy.gif"], ["description", "This is far too distracting."], ["created_at", "2019-11-22 19:27:35.456635"], ["updated_at", "2019-11-22 19:27:35.456635"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Create (0.2ms)[0m  [1m[32mINSERT INTO "dancers" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://media1.giphy.com/media/chU6iZtkStQTC/giphy.gif?cid=790b76119754a8a7a373417f51b41da002b4ca3184803469&rid=giphy.gif"], ["description", "Pure Carlton all the way, bring on the Tom Jones!"], ["created_at", "2019-11-22 19:27:35.459650"], ["updated_at", "2019-11-22 19:27:35.459650"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.4ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.4ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "This is very calming to watch, keep it up"], ["dancer_id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.3ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Speed it up, go faster!"], ["dancer_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.3ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Make it stop!"], ["dancer_id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.2ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Reminds me of the good old days of yore..."], ["dancer_id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (8.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" ORDER BY "feedback"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFeedback Load (0.3ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" ORDER BY "feedback"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/dancers/1" for ::1 at 2019-11-22 11:40:08 -0800
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 18ms (Views: 5.5ms | ActiveRecord: 1.0ms | Allocations: 11953)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-22 11:41:03 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"content"=>"testing post request to feedback", "dancer_id"=>3}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (1.0ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "testing post request to feedback"], ["dancer_id", 3]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 2.7ms | Allocations: 3596)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" ORDER BY "feedback"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:21:27 -0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 23ms (Views: 7.1ms | ActiveRecord: 1.2ms | Allocations: 11953)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:33:01 -0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.4ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 1638)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:33:12 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1617)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:34:58 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.5ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 1603)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:37:41 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.7ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.9ms | Allocations: 1617)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:45:40 -0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.3ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 1629)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:46:08 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1603)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-22 13:46:35 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"content"=>"", "dancer_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.5ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", ""], ["dancer_id", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 1.7ms | Allocations: 3575)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:46:41 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.3ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.3ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 1675)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:47:52 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1675)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:50:23 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1675)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-22 13:50:28 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"content"=>"Oh my gawd, will this work?!", "dancer_id"=>1}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.3ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.4ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Oh my gawd, will this work?!"], ["dancer_id", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 3240)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:50:34 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1750)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-22 13:50:42 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"content"=>"Moves for days! Never stop :)", "dancer_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.3ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Moves for days! Never stop :)"], ["dancer_id", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 3225)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:50:48 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 1824)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:54:44 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.3ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 1824)
+
+
+Started GET "/dancers/2" for ::1 at 2019-11-22 13:54:52 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 2]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1529)
+
+
+Started GET "/dancers/2" for ::1 at 2019-11-22 13:55:03 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 2]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1529)
+
+
+Started GET "/dancers/2" for ::1 at 2019-11-22 13:55:07 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 2]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1529)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:55:24 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.3ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.5ms | Allocations: 1824)
+
+
+Started GET "/dancers/2" for ::1 at 2019-11-22 13:55:28 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 2]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1529)
+
+
+Started GET "/dancers/3" for ::1 at 2019-11-22 13:55:30 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 3]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1605)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:56:36 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1824)
+
+
+Started GET "/dancers/2" for ::1 at 2019-11-22 13:56:39 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 2]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1529)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:56:51 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.3ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 1824)
+
+
+Started GET "/dancers/2" for ::1 at 2019-11-22 13:56:53 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mDancer Load (0.3ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 2]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 16ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 1532)
+
+
+Started GET "/dancers/3" for ::1 at 2019-11-22 13:56:59 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 3]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1605)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:58:47 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1824)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 13:59:13 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.6ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.8ms | Allocations: 1824)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" ORDER BY "feedback"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mFeedback Load (0.4ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[31mDelete from feedback[0m
+  [1m[35m (0.7ms)[0m  [1m[31mDELETE FROM SQLITE_SEQUENCE WHERE name='feedback'[0m
+  [1m[35m (0.6ms)[0m  [1m[31mDelete from dancers[0m
+  [1m[35m (0.7ms)[0m  [1m[31mDELETE FROM SQLITE_SEQUENCE WHERE name='dancers'[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Create (0.2ms)[0m  [1m[32mINSERT INTO "dancers" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://media1.giphy.com/media/K6CkDdm0ofyms/giphy.gif?cid=790b7611207ea3c727649278ad3eeea3a378a95e010d49e5&rid=giphy.gif"], ["description", "Paul Rudd has all the moves!"], ["created_at", "2019-11-22 22:00:14.318001"], ["updated_at", "2019-11-22 22:00:14.318001"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Create (0.2ms)[0m  [1m[32mINSERT INTO "dancers" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://media0.giphy.com/media/7XE0nUUauSj3a/giphy.gif?cid=790b761110afeb3b699a78557dfea5f191531c4e2572aa70&rid=giphy.gif"], ["description", "This is far too distracting."], ["created_at", "2019-11-22 22:00:14.321384"], ["updated_at", "2019-11-22 22:00:14.321384"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Create (0.3ms)[0m  [1m[32mINSERT INTO "dancers" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://media1.giphy.com/media/chU6iZtkStQTC/giphy.gif?cid=790b76119754a8a7a373417f51b41da002b4ca3184803469&rid=giphy.gif"], ["description", "Pure Carlton all the way, bring on the Tom Jones!"], ["created_at", "2019-11-22 22:00:14.336132"], ["updated_at", "2019-11-22 22:00:14.336132"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.2ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "This is very calming to watch, keep it up"], ["dancer_id", 1]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.2ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Speed it up, go faster!"], ["dancer_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.2ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Make it stop!"], ["dancer_id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.2ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Reminds me of the good old days of yore..."], ["dancer_id", 3]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/dancers/1" for ::1 at 2019-11-22 14:06:59 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 23ms (Views: 6.5ms | ActiveRecord: 1.4ms | Allocations: 11958)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 14:09:24 -0800
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 20ms (Views: 7.0ms | ActiveRecord: 1.3ms | Allocations: 11953)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-22 14:09:56 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"content"=>"This is so great, never stop dancing!", "dancer_id"=>1}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.5ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "This is so great, never stop dancing!"], ["dancer_id", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 23ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 3596)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 14:10:00 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.4ms | Allocations: 1691)
+
+
+Started GET "/dancers/2" for ::1 at 2019-11-22 14:10:08 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.3ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 2]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 1543)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-22 14:10:21 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"content"=>"This hurts", "dancer_id"=>2}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.3ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.7ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "This hurts"], ["dancer_id", 2]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.5ms | Allocations: 3239)
+
+
+Started GET "/dancers/3" for ::1 at 2019-11-22 14:10:28 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mDancer Load (0.5ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 3]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 1531)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 14:10:35 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.3ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1677)
+
+
+Started GET "/dancers/2" for ::1 at 2019-11-22 14:10:38 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.5ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 2]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 1601)
+
+
+Started GET "/dancers/3" for ::1 at 2019-11-22 14:10:40 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mDancer Load (0.3ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 3]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.5ms | Allocations: 1531)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-22 14:10:46 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"content"=>"Keep it up dude!", "dancer_id"=>3}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.8ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Keep it up dude!"], ["dancer_id", 3]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 3220)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-22 14:10:49 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/dancers/2" for ::1 at 2019-11-22 14:10:53 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 2]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.2ms | Allocations: 1601)
+
+
+Started GET "/dancers/3" for ::1 at 2019-11-22 14:10:55 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.3ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 3]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 1603)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[31mDelete from feedback[0m
+  [1m[35m (0.7ms)[0m  [1m[31mDELETE FROM SQLITE_SEQUENCE WHERE name='feedback'[0m
+  [1m[35m (0.7ms)[0m  [1m[31mDelete from dancers[0m
+  [1m[35m (0.7ms)[0m  [1m[31mDELETE FROM SQLITE_SEQUENCE WHERE name='dancers'[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Create (0.3ms)[0m  [1m[32mINSERT INTO "dancers" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://media1.giphy.com/media/K6CkDdm0ofyms/giphy.gif?cid=790b7611207ea3c727649278ad3eeea3a378a95e010d49e5&rid=giphy.gif"], ["description", "Paul Rudd has all the moves!"], ["created_at", "2019-11-22 22:27:15.423736"], ["updated_at", "2019-11-22 22:27:15.423736"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Create (0.2ms)[0m  [1m[32mINSERT INTO "dancers" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://media0.giphy.com/media/7XE0nUUauSj3a/giphy.gif?cid=790b761110afeb3b699a78557dfea5f191531c4e2572aa70&rid=giphy.gif"], ["description", "This is far too distracting."], ["created_at", "2019-11-22 22:27:15.427228"], ["updated_at", "2019-11-22 22:27:15.427228"]]
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Create (0.2ms)[0m  [1m[32mINSERT INTO "dancers" ("url", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["url", "https://media1.giphy.com/media/chU6iZtkStQTC/giphy.gif?cid=790b76119754a8a7a373417f51b41da002b4ca3184803469&rid=giphy.gif"], ["description", "Pure Carlton all the way, bring on the Tom Jones!"], ["created_at", "2019-11-22 22:27:15.429460"], ["updated_at", "2019-11-22 22:27:15.429460"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.2ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "This is very calming to watch, keep it up"], ["dancer_id", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.2ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Speed it up, go faster!"], ["dancer_id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.2ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Make it stop!"], ["dancer_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mFeedback Create (0.2ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Reminds me of the good old days of yore..."], ["dancer_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mFeedback Load (0.4ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" ORDER BY "feedback"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFeedback Destroy (0.5ms)[0m  [1m[31mDELETE FROM "feedback" WHERE "feedback"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/dancers/1" for ::1 at 2019-11-25 14:45:02 -0800
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.4ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.3ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 28ms (Views: 7.8ms | ActiveRecord: 1.4ms | Allocations: 11953)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 14:46:50 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.4ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.6ms | Allocations: 1618)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 14:47:55 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.5ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.7ms | Allocations: 1617)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 14:48:16 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.9ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 1.0ms | Allocations: 1617)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 14:53:24 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 1603)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 14:54:53 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1603)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 14:55:14 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (1.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 1.4ms | Allocations: 1617)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 14:57:09 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.4ms | Allocations: 1603)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:02:30 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 1603)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:17:18 -0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.5ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.3ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.7ms | Allocations: 1629)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:19:14 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1603)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:29:26 -0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1629)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:29:32 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1603)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:30:05 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1603)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:32:00 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.7ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.9ms | Allocations: 1603)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:34:01 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 1603)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:34:56 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.6ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.8ms | Allocations: 1603)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:51:17 -0800
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.3ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 1629)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-25 15:51:25 -0800
+Processing by FeedbackController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 358)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: feedback):
+  
+app/controllers/feedback_controller.rb:15:in `feedback_params'
+app/controllers/feedback_controller.rb:3:in `create'
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:53:25 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 1655)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-25 15:53:30 -0800
+Processing by FeedbackController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 393)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: feedback):
+  
+app/controllers/feedback_controller.rb:15:in `feedback_params'
+app/controllers/feedback_controller.rb:3:in `create'
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:53:36 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 1602)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-25 15:53:42 -0800
+Processing by FeedbackController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 390)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: feedback):
+  
+app/controllers/feedback_controller.rb:15:in `feedback_params'
+app/controllers/feedback_controller.rb:3:in `create'
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:54:21 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 1603)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-25 15:54:26 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"dancer_id"=>1, "content"=>"Oh my gawd, will this work?!"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (1.8ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Oh my gawd, will this work?!"], ["dancer_id", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 3586)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:54:55 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1677)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-25 15:56:31 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"dancer_id"=>1, "content"=>"Nice hips you have been the source of our pain"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.5ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Nice hips you have been the source of our pain"], ["dancer_id", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 3225)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:57:10 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.4ms | Allocations: 1752)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 15:57:38 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1752)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-25 15:57:47 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"dancer_id"=>1, "content"=>"Sorry about that last comment"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.4ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Sorry about that last comment"], ["dancer_id", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 3225)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 16:08:20 -0800
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.4ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 1852)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-25 16:08:30 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"dancer_id"=>1, "content"=>"Stop moving"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.2ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.5ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Stop moving"], ["dancer_id", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 3223)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 16:08:57 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.4ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.1ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 1898)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-25 16:09:04 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"dancer_id"=>1, "content"=>"Stop moving"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.5ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Stop moving"], ["dancer_id", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 1.9ms | Allocations: 3220)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 16:10:48 -0800
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.2ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1970)
+
+
+Started POST "/feedback/" for ::1 at 2019-11-25 16:10:59 -0800
+Processing by FeedbackController#create as JSON
+  Parameters: {"feedback"=>{"dancer_id"=>1, "content"=>"Good job keep going"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mDancer Load (0.1ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[36mFeedback Create (0.3ms)[0m  [1m[32mINSERT INTO "feedback" ("content", "dancer_id") VALUES (?, ?)[0m  [["content", "Good job keep going"], ["dancer_id", 1]]
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/feedback_controller.rb:5:in `create'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 3220)
+
+
+Started GET "/dancers/1" for ::1 at 2019-11-25 18:02:51 -0800
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DancersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mDancer Load (0.4ms)[0m  [1m[34mSELECT "dancers".* FROM "dancers" WHERE "dancers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/dancers_controller.rb:10:in `show'
+  [1m[36mFeedback Load (0.4ms)[0m  [1m[34mSELECT "feedback".* FROM "feedback" WHERE "feedback"."dancer_id" = ?[0m  [["dancer_id", 1]]
+  ↳ app/controllers/dancers_controller.rb:12:in `show'
+Completed 200 OK in 32ms (Views: 6.6ms | ActiveRecord: 1.6ms | Allocations: 12546)
+
+
