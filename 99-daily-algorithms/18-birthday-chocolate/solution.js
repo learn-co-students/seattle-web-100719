@@ -1,4 +1,4 @@
-// alisa's solution
+// alisa's solution, not quite done
 
 function birthday(arr, d, m) {
     let counter = 0
