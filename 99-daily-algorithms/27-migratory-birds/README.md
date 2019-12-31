@@ -21,3 +21,6 @@ For example, assume your bird sightings are of types *arr = [1,1,2,2,3]*. There 
     mostSeen([1,1,1,1,2,3,4,5,5,5,5])
         => 1
 ```
+
+### Source
+[Hackerrank](https://www.hackerrank.com/challenges/migratory-birds/problem)
