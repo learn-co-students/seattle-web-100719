@@ -2,7 +2,7 @@
 
 ## Description
 
-The concept is that someone has a chocolate bar, and this person wants to share the chocolate with another person in a way which specifically corrosponds to that person's birthday. 
+The concept: One person has a chocolate bar, and this person wants to share the chocolate with another person in a way which specifically corrosponds to that person's birthday. 
 
 The parameters for this algorithm are an array of numbers, an integer representing the day, and an integer representing the month. The array of integers represents a "chocolate bar" -- with the length of the array being how many squares of chocolate the bar contains, and each square being marked with an integer. 
 
